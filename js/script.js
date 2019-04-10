@@ -130,10 +130,10 @@ function createMessageElement(messageObject) {
     var expiresIn = Math.round((messageObject.expiresOn - Date.now()) / 1000 / 60);
 
     // #8 message element
-    return '<div class="message'+
+    return '<div class="message accent'+
         //this dynamically adds the class 'own' (#own) to the #message, based on the
         //ternary operator. We need () in order to not disrupt the return.
-        (messageObject.own ? ' own' : '') +
+        (messageObject.own ? ' own' : ' accent ') +
         '">' +
         '<h3><a href="http://w3w.co/' + messageObject.createdBy + '" target="_blank">'+
         '<strong>' + messageObject.createdBy + '</strong></a>' +
@@ -150,11 +150,16 @@ function listChannels() {
     //$('#channels ul').append("<li>New Channel</li>")
 
     // #8 five new channels
-    $('#channels ul').append(createChannelElement(yummy));
+    /*$('#channels ul').append(createChannelElement(yummy));
     $('#channels ul').append(createChannelElement(sevencontinents));
     $('#channels ul').append(createChannelElement(killerapp));
     $('#channels ul').append(createChannelElement(firstpersononmars));
     $('#channels ul').append(createChannelElement(octoberfest));
+}*/
+
+//load channels as array
+for(i = 0; i < 6; i++) {
+    $('ul').append(channels);
 }
 
 /**
@@ -162,6 +167,7 @@ function listChannels() {
  * @param channelObject a channel object
  * @returns {HTMLElement}
  */
+
 function createChannelElement(channelObject) {
     /* this HTML is build in jQuery below:
      <li>

@@ -1,4 +1,6 @@
 /** #7 #chlob #new: the new yummy channel */
+var channels =  [yummy, sevencontinents, killerapp, firstpersononmars, octoberfest]
+
 
 var yummy = {
     name: "#Yummy",

@@ -9,6 +9,8 @@
   * Accent color_text: black
   */
 
+  /*shadow styles according to Scott Roa*/
+
 /* GLOBAL */
 
 * {
@@ -21,8 +23,27 @@ body {
     background-color: #F5F5F5;
 }
 
-button, strong {
+button {
+    height: auto;
+    display: block;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    border-color: none;
+    border: 1px;
+    border-radius: 5px;
+    padding: 0px 16px;
+    margin: 8px;
+    color: black;
     text-transform: uppercase;
+}
+
+/*button, strong {
+    text-transform: uppercase;
+}*/
+
+.selected {
+    color: #3F51B5;
 }
 
 /* LAYOUT */
@@ -67,6 +88,9 @@ h1 {
 
     /* MOOCUS image alignment */
     position: relative; /* we need this, so that the image's absolute position is relative to the app bar */
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
 h1#left-app-bar {
@@ -101,6 +125,9 @@ ul {
     top: 64px; /* the app bar's height */
     bottom: 72px; /* the tab bar's height */
     overflow-y: auto; /* this adds scroll bars on demand */
+    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2),
+    0px 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0px 6px 30px 5px rgba(0, 0, 0, 0.12);
 }
 
 li {
@@ -144,9 +171,28 @@ li i.fas, li i.far  {
 }
 
 
-li.selected {
+li .selected {
     color: #3F51B5;
     border-left: 4px solid #3F51B5;
+}
+
+/*FAB*/
+.circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    font-size: 24px;
+    background-color: #CDDC39;
+    color: black;
+    display: table-row;
+    vertical-align: middle;
+    position: absolute;  
+    bottom: 104px;
+    left: calc(80% - 16px);
+    text-align: center;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
 
 /* TAB BAR */
@@ -158,6 +204,10 @@ li.selected {
     bottom: 0;
     width: 100%;
     display: flex;
+    height: 88px;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
 #tab-bar button, #chat-bar button {
@@ -172,17 +222,17 @@ li.selected {
     flex-grow: 1;
 }
 
-#tab-bar button.selected {
+#tab-bar button .selected {
     color: #3F51B5;
     border-bottom: 4px solid #3F51B5;
 }
 
-#tab-bar button i {
-    /* #7 #icns #tab select i instead of img and adjust font size */
+/*#tab-bar button i {
+    /* #7 #icns #tab select i instead of img and adjust font size *7/*
     display: block;
     font-size: 24px;
     margin: 0 auto 4px auto;
-}
+}*/
 
 /* CHAT BAR */
 
@@ -190,16 +240,27 @@ li.selected {
     /* override button styles. We set the chat bar to appear like a tab-bar above. This overrides the tab bar's button scaling */
     width: auto;
     flex-grow: 0;
+    height: auto;
+    
 
     /* #7 #icns #smile adjust fa size */
     font-size: 24px;
+}
+
+#chat-bar .primary{
+    background-color: #3F51B5;
+    color: white;
+}
+#chat-bar .accent{
+    background-color: #CDDC39;
+    color: black;
 }
 
 #emojis {
     /* emoji menu */
     /* colors and borders */
     background-color:white;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 
     /* size & alignment */
     position: absolute;
@@ -219,7 +280,11 @@ li.selected {
 
     /* hide the #smile menu */
     display: none;
+    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2),
+    0px 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0px 6px 30px 5px rgba(0, 0, 0, 0.12);
 }
+
 
 /* #8 #input #styles for font, border, and alignment */
 #chat-bar input {
@@ -268,6 +333,9 @@ li.selected {
 .message p {
     background-color: white;
     padding: 16px;
+    box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
 .message button {
@@ -283,5 +351,18 @@ li.selected {
 }
 
 .message.own {
-    margin-left: 17.5%;
+    margin-left: calc(20% - 20px);
+}
+
+
+
+/*declaring css properties for primary and accent*/
+.primary {
+    background-color: #3F51B5;
+    color: white;
+}
+
+.accent {
+    background-color: #CDDC39;
+    color: black;
 }
