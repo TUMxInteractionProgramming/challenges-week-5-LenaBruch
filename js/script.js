@@ -157,11 +157,18 @@ function listChannels() {
     //$('#channels ul').append("<li>New Channel</li>")
 
     // #8 five new channels
-    $('#channels ul').append(createChannelElement(yummy));
-    $('#channels ul').append(createChannelElement(sevencontinents));
-    $('#channels ul').append(createChannelElement(killerapp));
-    $('#channels ul').append(createChannelElement(firstpersononmars));
-    $('#channels ul').append(createChannelElement(octoberfest));
+   $('#channels ul').append(createChannelElement(yummy));
+   $('#channels ul').append(createChannelElement(sevencontinents));
+   $('#channels ul').append(createChannelElement(killerapp));
+   $('#channels ul').append(createChannelElement(firstpersononmars));
+   $('#channels ul').append(createChannelElement(octoberfest));
+
+    //append channels by array
+   
+    for (i=0; i < channels.length; i++) {
+        var i;
+        $('#channels ul').append(createChannelElement(channels[i]));
+    }
 }
 
 
