@@ -82,6 +82,11 @@ function toggleEmojis() {
     $('#emojis').toggle(); // #toggle
 }
 
+var emojis = require('emojis-list')
+console.log(emojis[0])
+
+
+
 /**
  * #8 This #constructor function creates a new chat #message.
  * @param text `String` a message text
@@ -101,12 +106,13 @@ function Message(text) {
     this.own = true;
 }
 
-function sendMessage() {
+function sendMessage(){
     // #8 Create a new message to send and log it.
     //var message = new Message("Hello chatter");
 
     // #8 let's now use the real message #input
     var message = new Message($('#message').val());
+
     console.log("New message:", message);
 
     // #8 convenient message append with jQuery:
@@ -118,6 +124,7 @@ function sendMessage() {
 
     // #8 clear the message input
     $('#message').val('');
+    $.getElementById(sevencontinents.messageCount).innerHTML(sevencontinents.messageCount + 1)
 }
 
 /**
@@ -130,10 +137,10 @@ function createMessageElement(messageObject) {
     var expiresIn = Math.round((messageObject.expiresOn - Date.now()) / 1000 / 60);
 
     // #8 message element
-    return '<div class="message accent'+
+    return '<div class="message '+
         //this dynamically adds the class 'own' (#own) to the #message, based on the
         //ternary operator. We need () in order to not disrupt the return.
-        (messageObject.own ? ' own' : ' accent ') +
+        (messageObject.own ? ' own' : '  ') +
         '">' +
         '<h3><a href="http://w3w.co/' + messageObject.createdBy + '" target="_blank">'+
         '<strong>' + messageObject.createdBy + '</strong></a>' +
@@ -150,17 +157,14 @@ function listChannels() {
     //$('#channels ul').append("<li>New Channel</li>")
 
     // #8 five new channels
-    /*$('#channels ul').append(createChannelElement(yummy));
+    $('#channels ul').append(createChannelElement(yummy));
     $('#channels ul').append(createChannelElement(sevencontinents));
     $('#channels ul').append(createChannelElement(killerapp));
     $('#channels ul').append(createChannelElement(firstpersononmars));
     $('#channels ul').append(createChannelElement(octoberfest));
-}*/
-
-//load channels as array
-for(i = 0; i < 6; i++) {
-    $('ul').append(channels);
 }
+
+
 
 /**
  * #8 This function makes a new jQuery #channel <li> element out of a given object

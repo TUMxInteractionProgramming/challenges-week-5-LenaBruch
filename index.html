@@ -25,11 +25,17 @@
     <!-- embed external JavaScript file for app interaction -->
     <script src="js/script.js"></script>
 
+    <!--embed external JavaScript file for emojis-->
+   
+    
+
 </head>
 
 <!-- #8 #channel #onload all channels when the body has loaded -->
 <body onload="listChannels()">
 
+    <script src="js/emojis-list.js" type="text/javascript" charset="utf-8"></script>
+    
 <!-- channel area -->
 <div id="channels">
 
@@ -92,7 +98,7 @@
        
     </ul>
 
-    <div class="circle fas fa-plus"></div>
+    <button class="circle fas fa-plus"></button>
 
     <!-- TAB BAR -->
     <div id="tab-bar">
@@ -179,7 +185,8 @@
             <!-- #7 replacing icons -->
             <i class="far fa-smile"></i>
         </button>
-        <div id="emojis">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;</div>
+        <div id="emojis">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;
+        </div>
         <!-- #8 create a new input element which accepts text and has a prefill as well as a character limit.
                It also gets an id -->
         <input type="text" placeholder="Message..." maxlength="140" id="message">
